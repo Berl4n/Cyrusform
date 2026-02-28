@@ -14,9 +14,7 @@ export default function Home() {
           
         </nav>
 
-        <button className="bg-[#F5B400] hover:bg-[#D99A00] text-black px-6 py-2 rounded-full font-semibold transition">
-          Contato
-        </button>
+      
       </header>
 
       {/* HERO SECTION */}
