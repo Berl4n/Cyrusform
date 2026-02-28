@@ -1,5 +1,5 @@
 import { ContactForm } from "@/components/ContactForm"
-
+import Script from "next/script"
 export default function Home() {
   return (
     <div className="min-h-screen bg-[#0B0B0B] text-white">
@@ -32,9 +32,7 @@ export default function Home() {
             Formulários inteligentes que geram mais conversões para seu negócio.
           </p>
 
-          <button className="bg-[#F5B400] hover:bg-[#D99A00] text-black px-8 py-4 rounded-full font-semibold text-lg transition">
-            fale Conosco
-          </button>
+          
         </div>
 
         {/* FORMULÁRIO DIREITA */}
@@ -45,7 +43,35 @@ export default function Home() {
         </div>
 
       </section>
+ {/* WIDGET WHATSAPP */}
+      <Script id="widget-whats-config" strategy="afterInteractive">
+        {`
+          window.WidgetWhatsConfig = {
+            userId: 887760,
+            accountId: 719341,
+            funnelId: null,
+            sequenceId: null,
+            whatsappNumber: "+5581997906461",
+            companyName: "Cyrusform",
+            whatsappMessage: "Olá, gostaria de falar com um atendente!",
+            entity: "organization",
+            deal: false,
+            fields: [
+              { name: "name", label: "Nome", type: "text", required: true, customField: false },
+              { name: "email", label: "E-mail", type: "email", required: true, customField: false },
+              { name: "whatsapp", label: "WhatsApp", type: "text", required: true, customField: false }
+            ]
+          };
+        `}
+      </Script>
+
+      <Script
+        src="https://widgets.agendor.com.br/whatsapp.js"
+        strategy="afterInteractive"
+      />
 
     </div>
   )
 }
+    
+  
